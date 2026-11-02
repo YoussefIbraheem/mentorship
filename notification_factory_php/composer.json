@@ -1,0 +1,15 @@
+{
+    "name": "youssef/notification_factory_php",
+    "autoload": {
+        "psr-4": {
+            "Youssef\\NotificationFactoryPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "YoussefIbraheem",
+            "email": "youssefm.muhammed@gmail.com"
+        }
+    ],
+    "require": {}
+}
