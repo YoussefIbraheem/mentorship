@@ -73,7 +73,9 @@ class StripePaymentProcessorAdapter(PaymentProcessor):
         except (TypeError, ValueError, OverflowError) as e:
             stripe_res["error"] = f"Unexpected error: {e}"
         if stripe_res.get("status") == "pending":
-            stripe_res["error"] = stripe_res.get("error", "Payment is pending, please wait for confirmation")
+            stripe_res["error"] = stripe_res.get(
+                "error", "Payment is pending, please wait for confirmation"
+            )
 
         result = PaymentResult(
             success=stripe_res.get("status") == "succeeded",
@@ -82,6 +84,7 @@ class StripePaymentProcessorAdapter(PaymentProcessor):
         )
 
         return result
+
 
 
 # ---- Existing client code (do not modify) ----
